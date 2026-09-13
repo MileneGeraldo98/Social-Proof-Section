@@ -12,7 +12,7 @@ Os usuários devem ser capazes de:
 
 ### Screenshot
 
-!(./Images/print.png)
+![Design da Seção](./Images/print.png)
 
 ---
 
