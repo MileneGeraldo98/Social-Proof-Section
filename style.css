@@ -20,6 +20,7 @@ body {
     font-family: 'League Spartan', sans-serif;
     background-color:rgba(219, 219, 219, 0.945);
     padding: 20px;
+    overflow: hidden;
 }
 
 /* CONTAINER PRINCIPAL (Envelope tudo) */
