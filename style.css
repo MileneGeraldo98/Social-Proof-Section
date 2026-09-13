@@ -1,0 +1,242 @@
+:root {
+    --primary-color: hsl(300, 43%, 22%);
+    --secudary-color: hsl(333, 80%, 67%);
+    --dark-color: hsl(303, 10%, 53%);
+    --Light-color: hsl(300, 24%, 96%);
+    --white-color: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'League Spartan', sans-serif;
+    background-color:rgba(219, 219, 219, 0.945);
+    padding: 20px;
+}
+
+/* CONTAINER PRINCIPAL (Envelope tudo) */
+.container-main {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+/* SEÇÃO SUPERIOR: Título/Parágrafo à esquerda + Estrelas à direita */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0;
+}
+
+.container-h1 {
+    color: var(--primary-color);
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    max-width: 200px;
+}
+
+.container-paragraph p {
+    color: var(--dark-color);
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 300px;
+}
+
+/* CAIXAS DE ESTRELAS */
+.container-star {
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.star-1, .star-2, .star-3 {
+    background-color: var(--Light-color);
+    width: 350px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.star-1 {
+    margin-left: 0;
+}
+
+.star-2 {
+    margin-left: 30px;
+}
+
+.star-3 {
+    margin-left: 60px;
+}
+
+.star-1 img, .star-2 img, .star-3 img {
+    width: 14px;
+    height: 14px;
+}
+
+.paragraph-star {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* SEÇÃO INFERIOR: CARDS DE DEPOIMENTO */
+
+.cards-section {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container-card-1,
+.container-card-2,
+.container-card-3 {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    padding: 24px;
+    flex: 1;
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+}
+
+/* Efeito degrau nos Cards */
+.container-card-2 { margin-top: 16px; }
+.container-card-3 { margin-top: 32px; }
+
+/* Topo do card: Foto + Nome/Cargo lado a lado */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.container-card-1 img,
+.container-card-2 img,
+.container-card-3 img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    padding: 0; 
+}
+
+.container-titulo-1,
+.container-titulo-2,
+.container-titulo-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.container-titulo-1 h4, .container-titulo-2 h4, .container-titulo-3 h4 {
+    color: var(--white-color);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.container-titulo-1 h6, .container-titulo-2 h6, .container-titulo-3 h6 {
+    color: var(--secudary-color);
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.container-card-1-paragraph p,
+.container-card-2-paragraph p,
+.container-card-3-paragraph p {
+    color: var(--white-color);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    /* Container Principal */
+    .container-main {
+        padding: 30px 20px;
+        max-width: 100%;
+        gap: 32px;
+    }
+
+    .top-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 0;
+        gap: 24px;
+    }
+
+    .text-content {
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .container-h1 {
+        max-width: 100%;
+        font-size: 28px;
+    }
+
+    .container-paragraph p {
+        max-width: 100%;
+    }
+
+    .container-star {
+        align-items: center;
+    }
+
+    .star-1, .star-2, .star-3 {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;           
+        flex-direction: row;      
+        justify-content: center;  
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .cards-section {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .container-card-2,
+    .container-card-3 {
+        margin-top: 0;           
+    }
+}
