@@ -6,35 +6,41 @@
     --white-color: hsl(0, 0%, 100%);
 }
 
-* {
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    min-height: 100vh;
+
+}
+
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    align-items: flex-start; 
     font-family: 'League Spartan', sans-serif;
-    background-color:rgba(219, 219, 219, 0.945);
-    padding: 20px;
-    overflow: hidden;
+    background-color: rgba(219, 219, 219, 0.945);
+    padding: 40px 20px 80px 20px; /* Dá margem suficiente no final no mobile e desktop */
+    overflow-y: auto;
 }
 
 /* CONTAINER PRINCIPAL (Envelope tudo) */
 .container-main {
     background-color: white;
-    padding: 10px;
+    padding: 24px;
     border-radius: 8px;
     max-width: 900px;
     width: 100%;
-    box-sizing: border-box;
+    height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 40px;
-    padding-bottom: 40px;
 }
 
 /* SEÇÃO SUPERIOR: Título/Parágrafo à esquerda + Estrelas à direita */
@@ -44,7 +50,7 @@ body {
     align-items: center;
     gap: 40px;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .text-content {
@@ -75,14 +81,13 @@ body {
 .container-star {
     display: flex;
     flex-direction: column;
-    gap:16px;
+    gap: 16px;
     width: 100%;
     max-width: 500px;
 }
 
 .star-1, .star-2, .star-3 {
     background-color: var(--Light-color);
-    width: 350px;
     padding: 12px 20px;
     border-radius: 8px;
     display: flex;
@@ -90,20 +95,11 @@ body {
     gap: 10px;
     max-width: 400px;
     width: 100%;
-    box-sizing: border-box;
 }
 
-.star-1 {
-    margin-left: 0;
-}
-
-.star-2 {
-    margin-left: 30px;
-}
-
-.star-3 {
-    margin-left: 60px;
-}
+.star-1 { margin-left: 0; }
+.star-2 { margin-left: 30px; }
+.star-3 { margin-left: 60px; }
 
 .star-1 img, .star-2 img, .star-3 img {
     width: 14px;
@@ -117,12 +113,10 @@ body {
 }
 
 /* SEÇÃO INFERIOR: CARDS DE DEPOIMENTO */
-
 .cards-section {
     display: flex;
     gap: 24px;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .container-card-1,
@@ -132,9 +126,11 @@ body {
     border-radius: 8px;
     padding: 24px;
     flex: 1;
-    width: auto;
+    width: 100%;
     height: auto;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 /* Efeito degrau nos Cards */
@@ -155,7 +151,6 @@ body {
     width: 40px;
     height: 40px;
     object-fit: cover;
-    padding: 0; 
 }
 
 .container-titulo-1,
@@ -187,20 +182,25 @@ body {
     line-height: 1.6;
 }
 
+/* MOBILE MEDIA QUERY */
 @media (max-width: 768px) {
-    /* Container Principal */
+
+    body {
+        padding: 16px 12px;
+        align-items: flex-start;
+    }
+
     .container-main {
-        padding: 30px 20px;
-        max-width: 100%;
-        gap: 32px;
+        padding: 20px 14px;
+        gap: 20px;
     }
 
     .top-section {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 18px;
         margin-top: 0;
-        gap: 24px;
     }
 
     .text-content {
@@ -210,34 +210,70 @@ body {
 
     .container-h1 {
         max-width: 100%;
-        font-size: 28px;
+        font-size: 27px;
+        line-height: 1.05;
+        margin-bottom: 10px;
     }
 
     .container-paragraph p {
         max-width: 100%;
+        font-size: 12px;
+        line-height: 1.35;
     }
 
     .container-star {
         align-items: center;
+        gap: 8px;
     }
 
-    .star-1, .star-2, .star-3 {
+    .star-1,
+    .star-2,
+    .star-3 {
         width: 100%;
         max-width: 100%;
-        margin-left: 0;           
-        flex-direction: row;      
-        justify-content: center;  
-        gap: 10px;
-        padding: 16px;
+        margin-left: 0;
+        padding: 10px 12px;
+        height: 36px;
+        justify-content: center;
+    }
+
+    .star-1 img,
+    .star-2 img,
+    .star-3 img {
+        width: 13px;
+        height: 13px;
+    }
+
+    .paragraph-star {
+        font-size: 10px;
     }
 
     .cards-section {
         flex-direction: column;
-        gap: 16px;
+        gap: 12px;
+    }
+
+    .container-card-1,
+    .container-card-2,
+    .container-card-3 {
+        width: 100%;
+        padding: 16px;
+        gap: 12px;
     }
 
     .container-card-2,
     .container-card-3 {
-        margin-top: 0;           
+        margin-top: 0;
+    }
+
+    .container-card-1 img,
+    .container-card-2 img,
+    .container-card-3 img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .card-header {
+        gap: 10px;
     }
 }
